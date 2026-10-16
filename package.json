@@ -1,0 +1,9 @@
+{
+  "name": "whatsapp-field-agent",
+  "private": true,
+  "description": "Bobot's WhatsApp gateway: runs on a Linux server next to the WAHA container. Plain Node, no dependencies.",
+  "type": "commonjs",
+  "scripts": {
+    "test": "bash test/run-all.sh"
+  }
+}

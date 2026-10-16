@@ -1,0 +1,15 @@
+[Unit]
+Description=WAHA inbound webhook receiver (records every delivery; never drops silently)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /opt/waha/webhook-receiver.js
+Restart=always
+RestartSec=5
+WorkingDirectory=/opt/waha
+StandardOutput=append:/opt/waha/logs/receiver.log
+StandardError=append:/opt/waha/logs/receiver.log
+
+[Install]
+WantedBy=multi-user.target

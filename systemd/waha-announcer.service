@@ -1,0 +1,8 @@
+[Unit]
+Description=The crew good-morning and end-of-day messages — sends whichever is due, at most once a day each
+After=docker.service waha-webhook.service
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/node /opt/waha/daily-announcer.js
+StandardOutput=append:/opt/waha/logs/announcer.log
+StandardError=append:/opt/waha/logs/announcer.log

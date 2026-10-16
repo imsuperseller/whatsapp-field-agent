@@ -1,0 +1,9 @@
+[Unit]
+Description=WAHA round-trip watchdog — proves a message still completes the trip
+After=docker.service waha-webhook.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/node /opt/waha/watchdog.js
+StandardOutput=append:/opt/waha/logs/watchdog.log
+StandardError=append:/opt/waha/logs/watchdog.log
